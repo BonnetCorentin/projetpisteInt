@@ -39,10 +39,10 @@ public class ControllerLearner {
             destinationPage = "views/listerLearner";
         } catch (MonException e) {
             request.setAttribute("MesErreurs", e.getMessage());
-            destinationPage = "/vues/Erreur";
+            destinationPage = "/views/Erreur";
         } catch (Exception e) {
             request.setAttribute("MesErreurs", e.getMessage());
-            destinationPage = "vues/Erreur";
+            destinationPage = "views/Erreur";
         }
         return new ModelAndView(destinationPage);
     }
@@ -88,7 +88,7 @@ public class ControllerLearner {
             destinationPage = "index";
         } catch (MonException e) {
             request.setAttribute("MesErreurs", e.getMessage());
-            destinationPage = "/vues/Erreur";
+            destinationPage = "/views/Erreur";
         }
 
         return new ModelAndView(destinationPage);
@@ -110,7 +110,7 @@ public class ControllerLearner {
 
     @RequestMapping(value = "afficherLearner/{id}")
     public ModelAndView afficherLearner(HttpServletRequest request, HttpServletResponse response, @PathVariable(value = "id") int id) throws Exception {
-        String destinationPage = "vues/learnerDashboard";
+        String destinationPage = "views/learnerDashboard";
 
         LearnerEntity learnerEntity = getLearnerById(id);
 
@@ -129,7 +129,7 @@ public class ControllerLearner {
             destinationPage = "views/ajouterLearner";
         } catch (Exception e) {
             request.setAttribute("MesErreurs", e.getMessage());
-            destinationPage = "/vues/Erreur";
+            destinationPage = "/views/Erreur";
         }
 
         return new ModelAndView(destinationPage);
@@ -144,7 +144,7 @@ public class ControllerLearner {
             destinationPage = "views/modifierLearner";
         } catch (Exception e) {
             request.setAttribute("MesErreurs", e.getMessage());
-            destinationPage = "/vues/Erreur";
+            destinationPage = "/views/Erreur";
         }
 
         return new ModelAndView(destinationPage);
@@ -159,7 +159,7 @@ public class ControllerLearner {
             destinationPage = "index";
         } catch (MonException e) {
             request.setAttribute("MesErreurs", e.getMessage());
-            destinationPage = "/vues/Erreur";
+            destinationPage = "/views/Erreur";
         }
         return new ModelAndView(destinationPage);
     }

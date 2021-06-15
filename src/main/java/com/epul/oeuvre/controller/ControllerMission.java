@@ -31,6 +31,8 @@ public class ControllerMission {
     private ActionMissionService actionMissionService;
     @Autowired
     private ActionService actionService;
+    @Autowired
+    private JeuService jeuService;
 
 /*************************************************/
 /**************Tous les missions  ******************/
@@ -44,13 +46,13 @@ public class ControllerMission {
         try {
             mesMissions = missionService.getToutesLesMissions();
             request.setAttribute("mesMissions", mesMissions);
-            destinationPage = "vues/listerMission";
+            destinationPage = "views/listerMission";
         } catch (MonException e) {
             request.setAttribute("MesErreurs", e.getMessage());
-            destinationPage = "/vues/Erreur";
+            destinationPage = "/views/Erreur";
         } catch (Exception e) {
             request.setAttribute("MesErreurs", e.getMessage());
-            destinationPage = "vues/Erreur";
+            destinationPage = "views/Erreur";
         }
         return new ModelAndView(destinationPage);
     }
@@ -84,12 +86,13 @@ public class ControllerMission {
         jeuEntity.setDate(new java.sql.Date(Calendar.getInstance().getTimeInMillis()));
         jeuEntity.setFkLearner(idLearner);
         jeuEntity.setFkMission(idMission);
-
+        jeuEntity.setMission(missionService.getMissionID(idMission));
         int scoreT = 0;
         for (int i = 0; i < score.size(); i++) {
             scoreT += score.get(i);
         }
         jeuEntity.setScoreTotal(scoreT);
+        jeuService.ajouterJeu(jeuEntity);
         request.setAttribute("scoreT", scoreT);
 
         destinationPage = "index";
@@ -152,7 +155,7 @@ public class ControllerMission {
             destinationPage = "index";
         } catch (MonException e) {
             request.setAttribute("MesErreurs", e.getMessage());
-            destinationPage = "/vues/Erreur";
+            destinationPage = "/views/Erreur";
         }
 
         return new ModelAndView(destinationPage);
@@ -179,7 +182,7 @@ public class ControllerMission {
             destinationPage = "views/ajouterMission";
         } catch (Exception e) {
             request.setAttribute("MesErreurs", e.getMessage());
-            destinationPage = "/vues/Erreur";
+            destinationPage = "/views/Erreur";
         }
 
         return new ModelAndView(destinationPage);
@@ -194,7 +197,7 @@ public class ControllerMission {
             destinationPage = "views/modifierMission";
         } catch (Exception e) {
             request.setAttribute("MesErreurs", e.getMessage());
-            destinationPage = "/vues/Erreur";
+            destinationPage = "/views/Erreur";
         }
 
         return new ModelAndView(destinationPage);
@@ -209,7 +212,20 @@ public class ControllerMission {
             missions.add(missionService.getMissionID(inscription.getFkMission()));
         }
         request.setAttribute("mesMissions", missions);
-        destinationPage = "vues/listerMission";
+        destinationPage = "views/listerMission";
+        return new ModelAndView(destinationPage);
+    }
+
+    @RequestMapping(value = "/getMesMissions/learner/{id}")
+    public ModelAndView getMesMissions(HttpServletRequest request, HttpServletResponse response, @PathVariable(value = "id") int id) {
+        String destinationPage = "";
+        List<InscriptionEntity> inscriptions = inscriptionService.getInscriptionsByLearner(id);
+        List<MissionEntity> missions = new ArrayList<>();
+        for (InscriptionEntity inscription : inscriptions) {
+            missions.add(missionService.getMissionID(inscription.getFkMission()));
+        }
+        request.setAttribute("mesMissions", missions);
+        destinationPage = "views/listerMesMissions";
         return new ModelAndView(destinationPage);
     }
 
@@ -224,7 +240,7 @@ public class ControllerMission {
         }
         request.setAttribute("mesMissions", missions);
         request.setAttribute("action", action);
-        destinationPage = "vues/listerMissionAction";
+        destinationPage = "views/listerActionMission";
         return new ModelAndView(destinationPage);
     }
 
@@ -238,7 +254,7 @@ public class ControllerMission {
             destinationPage = "index";
         } catch (MonException e) {
             request.setAttribute("MesErreurs", e.getMessage());
-            destinationPage = "/vues/Erreur";
+            destinationPage = "/views/Erreur";
         }
         return new ModelAndView(destinationPage);
     }
@@ -252,7 +268,7 @@ public class ControllerMission {
             destinationPage = "index";
         } catch (MonException e) {
             request.setAttribute("MesErreurs", e.getMessage());
-            destinationPage = "/vues/Erreur";
+            destinationPage = "/views/Erreur";
         }
         return new ModelAndView(destinationPage);
     }

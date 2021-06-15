@@ -1,14 +1,14 @@
 <component name="ArtifactManager">
-  <artifact type="war" name="ProjetOeuvre:war">
+  <artifact type="war" name="PermisPiste:war">
     <output-path>$PROJECT_DIR$/target</output-path>
     <properties id="maven-jee-properties">
       <options>
-        <module>ProjetOeuvre</module>
+        <module>PermisPiste</module>
         <packaging>war</packaging>
       </options>
     </properties>
     <root id="archive" name="ProjetOeuvre.war">
-      <element id="artifact" artifact-name="ProjetOeuvre:war exploded" />
+      <element id="artifact" artifact-name="PermisPiste:war exploded" />
     </root>
   </artifact>
 </component>

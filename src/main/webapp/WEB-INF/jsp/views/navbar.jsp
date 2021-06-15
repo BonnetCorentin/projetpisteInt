@@ -2,7 +2,9 @@
          pageEncoding="UTF-8" %>
 <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Logo</a>
+        <a href="/" class="navbar-brand">
+            <img src="/img/logo_aeroport_nice.png" style="width:39px;" /> Permis Piste Nice
+        </a>
         <ul class="navbar-nav me-auto">
             <li id="toggleSidebar" class="nav-item">
                 <a class="nav-link" href="#"><span class="badge border border-white fs-6"><i class="fas fa-bars"></i> Menu</span></a>

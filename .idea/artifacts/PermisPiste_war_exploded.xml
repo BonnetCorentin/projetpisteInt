@@ -1,10 +1,10 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="ProjetOeuvre:war exploded">
+  <artifact type="exploded-war" name="PermisPiste:war exploded">
     <output-path>$PROJECT_DIR$/target/ProjetOeuvre</output-path>
     <properties id="maven-jee-properties">
       <options>
         <exploded>true</exploded>
-        <module>ProjetOeuvre</module>
+        <module>PermisPiste</module>
         <packaging>war</packaging>
       </options>
     </properties>

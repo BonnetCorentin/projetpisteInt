@@ -41,13 +41,13 @@ public class ControllerAction {
         try {
             mesActions = actionService.getToutesLesActions();
             request.setAttribute("mesActions", mesActions);
-            destinationPage = "vues/listerAction";
+            destinationPage = "views/listerAction";
         } catch (MonException e) {
             request.setAttribute("MesErreurs", e.getMessage());
-            destinationPage = "/vues/Erreur";
+            destinationPage = "/views/Erreur";
         } catch (Exception e) {
             request.setAttribute("MesErreurs", e.getMessage());
-            destinationPage = "vues/Erreur";
+            destinationPage = "views/Erreur";
         }
         return new ModelAndView(destinationPage);
     }
@@ -83,7 +83,7 @@ public class ControllerAction {
             destinationPage = "index";
         } catch (MonException e) {
             request.setAttribute("MesErreurs", e.getMessage());
-            destinationPage = "/vues/Erreur";
+            destinationPage = "/views/Erreur";
         }
 
         return new ModelAndView(destinationPage);
@@ -111,7 +111,7 @@ public class ControllerAction {
             destinationPage = "views/ajouterAction";
         } catch (Exception e) {
             request.setAttribute("MesErreurs", e.getMessage());
-            destinationPage = "/vues/Erreur";
+            destinationPage = "/views/Erreur";
         }
 
         return new ModelAndView(destinationPage);
@@ -127,7 +127,7 @@ public class ControllerAction {
             actions.add(actionService.getActionID(ia.getFkAction()));
         }
         request.setAttribute("mesActions", actions);
-        destinationPage = "vues/listerAction";
+        destinationPage = "views/listerAction";
         return new ModelAndView(destinationPage);
     }
 
@@ -147,7 +147,7 @@ public class ControllerAction {
         }
         request.setAttribute("missions", missions);
         request.setAttribute("id", id);
-        destinationPage = "vues/ajouterMissionAction";
+        destinationPage = "views/ajouterMissionAction";
         return new ModelAndView(destinationPage);
     }
 
@@ -164,7 +164,7 @@ public class ControllerAction {
             destinationPage = "index";
         } catch (MonException e) {
             request.setAttribute("MesErreurs", e.getMessage());
-            destinationPage = "/vues/Erreur";
+            destinationPage = "/views/Erreur";
         }
 
         return new ModelAndView(destinationPage);
@@ -181,7 +181,7 @@ public class ControllerAction {
         }
         request.setAttribute("mesActions", actions);
         request.setAttribute("mission", mission);
-        destinationPage = "vues/listerActionMission";
+        destinationPage = "views/listerMissionAction";
         return new ModelAndView(destinationPage);
     }
 
@@ -194,7 +194,7 @@ public class ControllerAction {
             destinationPage = "views/modifierAction";
         } catch (Exception e) {
             request.setAttribute("MesErreurs", e.getMessage());
-            destinationPage = "/vues/Erreur";
+            destinationPage = "/views/Erreur";
         }
 
         return new ModelAndView(destinationPage);
@@ -210,7 +210,7 @@ public class ControllerAction {
             destinationPage = "index";
         } catch (MonException e) {
             request.setAttribute("MesErreurs", e.getMessage());
-            destinationPage = "/vues/Erreur";
+            destinationPage = "/views/Erreur";
         }
         return new ModelAndView(destinationPage);
     }

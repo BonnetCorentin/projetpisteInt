@@ -12,6 +12,7 @@ public class JeuEntity {
     private int fkLearner;
     private int fkMission;
     private int scoreTotal;
+    private MissionEntity mission;
     private Date date;
 
     @Id
@@ -63,7 +64,15 @@ public class JeuEntity {
 
     public void setDate(Date date) {
         this.date = date;
+    }
 
+    @ManyToOne
+    @JoinColumn(name = "fk_mission", referencedColumnName = "id", insertable = false, updatable = false)
+    public MissionEntity getMission() {
+        return mission;
+    }
 
+    public void setMission(MissionEntity mission) {
+        this.mission = mission;
     }
 }
