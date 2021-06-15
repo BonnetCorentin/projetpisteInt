@@ -1,0 +1,66 @@
+:root {
+  --sidebar-width: 280px;
+}
+
+.sidebar {
+  float: left;
+  height: 80%;
+  width: var(--sidebar-width);
+  margin-right: 20px;
+  transition: margin 0.7s;
+}
+
+.sidebar.hidden {
+  margin-left: calc(-1 * var(--sidebar-width));
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 20%;
+  background-color: grey;
+  color: white;
+  text-align: center;
+}
+
+.form-container {
+  text-align: center;
+  padding-top: 4px;
+  margin-top: 20px;
+  border-radius: 0.5rem;
+}
+
+fieldset.bordered {
+  box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+  padding: 20px 40px 30px 40px;
+  border-radius: 0.5rem;
+}
+
+fieldset.bordered legend {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: left;
+}
+
+input {
+  border: none !important;
+  border-bottom: 1px solid #ccc !important;
+  margin-bottom: 25px;
+  font-family: "Montserrat";
+  font-weight: bold !important;
+  letter-spacing: 1px
+}
+
+input:focus {
+  outline: none;
+}
+
+label {
+  font-family: "Montserrat;
+}
+
+.form-container .card-title {
+  margin-bottom: 25px;
+}
