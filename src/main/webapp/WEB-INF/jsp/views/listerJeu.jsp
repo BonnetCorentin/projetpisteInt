@@ -16,8 +16,8 @@
 			<c:forEach items="${mesJeux}" var="jeu">
 				<tr>
 					<td>${jeu.id}</td>
-					<td><c:if test="${not empty item.mission}">
-						${item.mission.wording}
+					<td><c:if test="${not empty jeu.mission}">
+						${jeu.mission.wording}
 					</c:if></td>
 					<td>${jeu.date}</td>
 					<td>${jeu.scoreTotal}</td>

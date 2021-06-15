@@ -40,7 +40,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="/mission/getMissions/learner/${sessionScope.id}" class="nav-link">
+                <a href="/mission/getMesMissions/learner/${sessionScope.id}" class="nav-link">
                     <i class="fas fa-gamepad"></i> Mes missions
                 </a>
 
@@ -59,6 +59,11 @@
                         <i class="fas fa-gamepad"></i> Lister les actions
                     </a>
                 </li>
-
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                    <a href="/jeu/learner/${sessionScope.id}" class="nav-link ">
+                        <i class="fas fa-gamepad"></i> Mes jeux
+                    </a>
+                </li>
                     <% } %>
 </nav>

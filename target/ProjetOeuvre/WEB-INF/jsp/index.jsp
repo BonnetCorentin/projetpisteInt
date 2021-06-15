@@ -33,6 +33,5 @@
     <hr class="my-4">
     <p>Sélectionnez dans <span class="badge bg-dark"><i class="fas fa-bars"></i> Menu</span> la fonctionnalité désirée
         ou cliquez sur le bouton suivant.</p>
-    <a class="btn btn-primary btn-lg" href="#"><i class="fas fa-gamepad"></i> Accéder aux jeux</a>
 </div>
 <%@include file="views/footer.jsp" %>

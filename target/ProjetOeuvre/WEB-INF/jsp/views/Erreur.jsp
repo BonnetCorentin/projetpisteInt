@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 
-<%@include file="../vues/header.jsp" %>
+<%@include file="header.jsp" %>
 <body>
-<%@include file="navbar.jsp"%>
 <div class="col-md-12 well well-md">
     <center><h1>Gestion des erreurs </h1></center>
 </div>
@@ -30,7 +29,7 @@
         location.href = "/";
     }
 </script>
-<%@include file="../vues/footer.jsp"%>
+<%@include file="footer.jsp"%>
 </body>
 </html>
 

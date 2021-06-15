@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 16 juin 2021 à 00:02
+-- Généré le : mer. 16 juin 2021 à 00:11
 -- Version du serveur :  10.4.14-MariaDB
 -- Version de PHP : 7.2.33
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `projetpermis`
 --
+CREATE DATABASE IF NOT EXISTS `projetpermis` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `projetpermis`;
 
 -- --------------------------------------------------------
 
